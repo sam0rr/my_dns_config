@@ -1,0 +1,16 @@
+// Master zone for samorr.org
+zone "samorr.org" {
+    type master;
+    file "/home/etudiant/my_dns_config/zones/db.samorr.org"; 
+    allow-transfer { 10.4.4.189; }; 
+    notify yes;
+};
+
+// Slave zone for cegepsoreltracy.store
+zone "cegepsoreltracy.store" {
+    type slave;  
+    file "/home/etudiant/my_dns_config/zones/db.cegepsoreltracy.store"; 
+    masters { 10.4.4.182; };
+    allow-transfer { 10.4.4.187; };
+    notify yes;
+};
